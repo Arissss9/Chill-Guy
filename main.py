@@ -1,6 +1,7 @@
 import discord
-from botlogic import gen_pass
-from botlogic import gen_emodji
+# mencari image
+from bot_logic import gen_pass
+from bot_logic import gen_emodji
 # Variabel intents menyimpan hak istimewa bot
 intents = discord.Intents.default()
 # Mengaktifkan hak istimewa message-reading
@@ -27,8 +28,7 @@ async def on_message(message):
         await message.channel.send(gen_pass(pass_length=10))
         # Emoji
     elif message.content.startswith('$smile'):
-        await message.channel.send(gen_emodji())
+        await message.channel.send(gen_emodji( ))
     else:
         await message.channel.send(message.content)
-
 client.run(token)
