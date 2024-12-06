@@ -7,6 +7,7 @@ import random
 import requests
 from discord.ext import commands
 from bot_logic import gen_pass
+from bot_logic import gen_emodji
 from logic_poke import Pokemon
 
 description = '''An example bot to showcase the discord.ext.commands extension
@@ -26,6 +27,30 @@ async def on_ready():
     print(f'Logged in as {bot.user} (ID: {bot.user.id})') # type: ignore
     print('------')
 
+@bot.command()
+async def hello(ctx):
+    await ctx.send(f'Hi! I am a bot {bot.user}!')
+@bot.command()
+async def sanji(ctx):
+    await ctx.send(f'Hello mate, what can i do for u?')
+@bot.command()
+async def gapapa(ctx):
+    await ctx.send(f'anything that i can help?')
+@bot.command()
+async def cry_sanji(ctx):
+    await ctx.send(f'eeee, sanji is crying :(')
+@bot.command()
+async def smile(ctx):
+    await ctx.send("\U0001F606")
+@bot.command()
+async def laugh(ctx):
+    await ctx.send("\U0001F923")
+@bot.command()
+async def sad(ctx):
+    await ctx.send("\U0001f600")
+@bot.command()
+async def heh(ctx, count_heh = 5):
+    await ctx.send("he" * count_heh)
 # adding two numbers
 @bot.command()
 async def add(ctx, left: int, right: int):
@@ -136,4 +161,35 @@ async def go(ctx):
         await ctx.send(embed=embed)  # Sending an embedded message with an image
     else:
         await ctx.send("Failed to upload an image of the pokémon.")
+#show local drive    
+@bot.command()
+async def local_drive(ctx):
+    try:
+      folder_path = "./files"  # Replace with the actual folder path
+      files = os.listdir(folder_path)
+      file_list = "\n".join(files)
+      await ctx.send(f"Files in the files folder:\n{file_list}")
+    except FileNotFoundError:
+      await ctx.send("Folder not found.")
+#show local file
+@bot.command()
+async def showfile(ctx, filename):
+  """Sends a file as an attachment."""
+  folder_path = "./files/"
+  file_path = os.path.join(folder_path, filename)
+  try:
+    await ctx.send(file=discord.File(file_path))
+  except FileNotFoundError:
+    await ctx.send(f"File '{filename}' not found.")
+# upload file to local computer
+@bot.command()
+async def simpan(ctx):
+    if ctx.message.attachments:
+        for attachment in ctx.message.attachments:
+            file_name = attachment.filename
+            # file_url = attachment.url  IF URL
+            await attachment.save(f"./files/{file_name}")
+            await ctx.send(f"Menyimpan {file_name}")
+    else:
+        await ctx.send("Anda lupa mengunggah :(")
 bot.run('MTMwNjU1NTAyNzQ4NTM2NDI0NA.GuARhc.EjkdA9RsigBze3e57s4l1aIf3dNleoVf7F6Rk8')
