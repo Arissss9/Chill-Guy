@@ -29,16 +29,23 @@ async def on_ready():
 
 @bot.command()
 async def hello(ctx):
-    await ctx.send(f'Hi! I am a bot {bot.user}!')
+    await ctx.send(f'Hi! I am a bot {bot.user}!') #to say hello to ur bot
 @bot.command()
 async def sanji(ctx):
-    await ctx.send(f'Hello mate, what can i do for u?')
+    await ctx.send(f'Hello mate, what can i do for u?') #he wants to help u
 @bot.command()
-async def gapapa(ctx):
-    await ctx.send(f'anything that i can help?')
+async def hi(ctx):
+    await ctx.send(f'anything that i can help?') #asking about help
 @bot.command()
 async def cry_sanji(ctx):
-    await ctx.send(f'eeee, sanji is crying :(')
+    await ctx.send(f'eeee, sanji is crying :(') #crying sanji
+@bot.command()
+async def Thanks(ctx):
+    await ctx.send(f'Ur Welcome mate!') #sanji loves to help u
+@bot.command()
+async def pict(ctx):
+    await ctx.send(f'What can i show u? #type ($showfile file that u want)') #pick ur pict!!!
+#Emoji command 
 @bot.command()
 async def smile(ctx):
     await ctx.send("\U0001F606")
@@ -49,8 +56,15 @@ async def laugh(ctx):
 async def sad(ctx):
     await ctx.send("\U0001f600")
 @bot.command()
+async def love(ctx):
+    await ctx.send("\U0001f60D")
+# Multiply word
+@bot.command()
 async def heh(ctx, count_heh = 5):
-    await ctx.send("he" * count_heh)
+    await ctx.send("heh" * count_heh)
+@bot.command()
+async def apa(ctx, count_apa = 5):
+    await ctx.send("apa" * count_apa)
 # adding two numbers
 @bot.command()
 async def add(ctx, left: int, right: int):

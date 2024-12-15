@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, Verdana, sans-serif;
+    /* keluarga font */
+    font-size: 11pt;
+    /* Ukuran font utama di <p></p>  */
+    background-color: #4B5945;
+    /* Warna latar belakang laman web */
+    color: #333;
+    /* Warna teks */
+    height: 550vh;
+}
+
+@keyframes color-change {
+    0% {
+        color: blue;
+    }
+
+    50% {
+        color: red;
+    }
+
+    100% {
+        color: yellow;
+    }
+
+    150% {
+        color: green;
+    }
+}
+
+h1:hover {
+    color: #d1eacb;
+    /* Warna tajuk */
+    font-size: 24pt;
+    /* Ukuran font tajuk */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* Keluarga font yang digunakan di tajuk (header) */
+    animation: color-change 3s infinite;
+}
+
+h2:hover {
+    color: #d1eacb;
+    /* Warna tajuk */
+    font-size: 24pt;
+    /* Ukuran font tajuk */
+    font-family: Georgia, Times, serif;
+    /* Keluarga font yang digunakan di tajuk (header) */
+    animation: color-change 3s infinite;
+}
+
+p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #c1ffbc;
+    font-size: 0.9rem;
+}
+
+ol {
+    color: #c1ffbc;
+    font-size: 0.9rem;
+}
