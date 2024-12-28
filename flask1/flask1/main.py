@@ -43,5 +43,12 @@ def ketiga_c():
 
     return password
 #image
+@app.route("/image")
+def keempat_c():
+    jpg_name = random.choice(os.listdir("img"))
+    with open(f'img/{jpg_name}', 'r') as f:
+        image = f.read()
+        return f'{image}'
+
 
 app.run(debug=True)
