@@ -45,10 +45,10 @@ def ketiga_c():
 #image
 @app.route("/image")
 def keempat_c():
-    jpg_name = random.choice(os.listdir("img"))
-    with open(f'img/{jpg_name}', 'r') as f:
-        image = f.read()
-        return f'{image}'
+    jpg_nama = random.choice(os.listdir("img"))
+    with open(f'img/{jpg_nama}', 'r') as f:
+        return f"<img src= '../static/img' alt='random'>"
+
 
 
 app.run(debug=True)
